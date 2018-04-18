@@ -1,4 +1,4 @@
-//% weight=0 color=#3CB371 icon="\uf0ad" block="Tools"
+//% weight=0 color=#3CB371 icon="\uf0ad" block="S3BigCar"
 namespace S3BigCar {
     /**
     * 計算長方形面積，並回傳
@@ -19,9 +19,43 @@ namespace S3BigCar {
     /**
     * 計算長方形面積，不回傳，只顯示在LED
     */
-    //% blockId="ledOfRectangle2" block="CarMove speed %speed"
+    //% blockId="LeftMoveForward" block="LeftMoveForward speed %speed"
     //% blockGap=2 weight=1
     export function LeftMoveForward(speed: number): void {
+        let buf = pins.createBuffer(5);
+        buf[0] = 6 + 4 * 12
+        buf[1] = 0 & 0xff
+        buf[2] = (0 >> 8) & 0xff
+        buf[3] = 4095 & 0xff
+        buf[4] = (4095 >> 8) & 0xff
+        pins.i2cWriteBuffer(0x41, buf, false)        
+        }
+    
+    //% blockId="RightMoveForward" block="RightLeftMoveForward speed %speed"
+    //% blockGap=2 weight=1
+    export function RightoveForward(speed: number): void {
+        let buf = pins.createBuffer(5);
+        buf[0] = 6 + 4 * 12
+        buf[1] = 0 & 0xff
+        buf[2] = (0 >> 8) & 0xff
+        buf[3] = 4095 & 0xff
+        buf[4] = (4095 >> 8) & 0xff
+        pins.i2cWriteBuffer(0x41, buf, false)        
+        }
+    //% blockId="LeftMoveBackward" block="LeftMoveBackward speed %speed"
+    //% blockGap=2 weight=1
+    export function LeftMoveBackward(speed: number): void {
+        let buf = pins.createBuffer(5);
+        buf[0] = 6 + 4 * 12
+        buf[1] = 0 & 0xff
+        buf[2] = (0 >> 8) & 0xff
+        buf[3] = 4095 & 0xff
+        buf[4] = (4095 >> 8) & 0xff
+        pins.i2cWriteBuffer(0x41, buf, false)        
+        }
+    //% blockId="RightMoveBackward" block="RightMoveBackward speed %speed"
+    //% blockGap=2 weight=1
+    export function RightMoveBackward(speed: number): void {
         let buf = pins.createBuffer(5);
         buf[0] = 6 + 4 * 12
         buf[1] = 0 & 0xff
