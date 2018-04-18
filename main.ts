@@ -19,14 +19,8 @@ namespace tools {
     
      //% blockId="CarMoveForward" block="CarMoveForward %Speed"
     //% blockGap=2 weight=1
-    export function CarMoveForward(Speed: number): void {
-        let buf = pins.createBuffer(5);
-    buf[0] = 6 + 4 * 12
-    buf[1] = 0 & 0xff
-    buf[2] = (0 >> 8) & 0xff
-    buf[3] = 4095 & 0xff
-    buf[4] = (4095 >> 8) & 0xff
-    pins.i2cWriteBuffer(0x41, buf, false)
+    export function CarMoveForward: void {
+    
     }
   
 }
