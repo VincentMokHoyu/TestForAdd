@@ -1,7 +1,7 @@
 {
-    "name": "tools",
+    "name": "S3BigCar",
     "version": "0.0.1",
-    "description": "³o¬O±M¬°´ú¸Õ¥Îªºmicro:bit¿n¤ì",
+    "description": "Â³oÂ¬OÂ±MÂ¬Â°Â´ÃºÂ¸Ã•Â¥ÃŽÂªÂºmicro:bitÂ¿nÂ¤Ã¬",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/tools-strings.json"
+        "_locales/zh/S3BigCar-strings.json"
     ],
     "public": true
 }
