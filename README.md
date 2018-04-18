@@ -1,6 +1,6 @@
 # S3BigCar
 
-³o¬O±M¬°´ú¸Õ¥Îªºmicro:bit¿n¤ì
+S3BigCar
 
 ## License
 
