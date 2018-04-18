@@ -8,8 +8,8 @@ namespace S3BigCar {
         buf[0] = 6 + 4 * 12
         buf[1] = 0 & 0xff
         buf[2] = (0 >> 8) & 0xff
-        buf[3] = 4095 & 0xff
-        buf[4] = (4095 >> 8) & 0xff
+        buf[3] = speed & 0xff
+        buf[4] = (speed >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
     
@@ -20,8 +20,8 @@ namespace S3BigCar {
         buf[0] = 6 + 4 * 12
         buf[1] = 0 & 0xff
         buf[2] = (0 >> 8) & 0xff
-        buf[3] = 4095 & 0xff
-        buf[4] = (4095 >> 8) & 0xff
+        buf[3] = speed & 0xff
+        buf[4] = (speed >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
    
@@ -32,8 +32,8 @@ namespace S3BigCar {
         buf[0] = 6 + 4 * 12
         buf[1] = 0 & 0xff
         buf[2] = (0 >> 8) & 0xff
-        buf[3] = 4095 & 0xff
-        buf[4] = (4095 >> 8) & 0xff
+        buf[3] = speed & 0xff
+        buf[4] = (speed >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
    
@@ -44,8 +44,8 @@ namespace S3BigCar {
         buf[0] = 6 + 4 * 12
         buf[1] = 0 & 0xff
         buf[2] = (0 >> 8) & 0xff
-        buf[3] = 4095 & 0xff
-        buf[4] = (4095 >> 8) & 0xff
+        buf[3] = speed & 0xff
+        buf[4] = (speed >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
   }
