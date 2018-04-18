@@ -13,7 +13,7 @@ namespace S3BigCar {
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
     
-    //% blockId="RightMoveForward" block="RightLeftMoveForward speed %speed"
+    //% blockId="RightMoveForward" block="RightMoveForward speed %speed"
     //% blockGap=2 weight=1
     export function RightoveForward(speed: number): void {
         let buf = pins.createBuffer(5);
