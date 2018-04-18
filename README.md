@@ -1,6 +1,6 @@
-# tools
+# S3BigCar
 
-³o¬O±M¬°´ú¸Õ¥Îªºmicro:bit¿n¤ì
+Â³oÂ¬OÂ±MÂ¬Â°Â´ÃºÂ¸Ã•Â¥ÃŽÂªÂºmicro:bitÂ¿nÂ¤Ã¬
 
 ## License
 
@@ -12,5 +12,5 @@ MIT
 (The metadata above is needed for package search.)
 
 ```package
-tools=github:VincentMokHoyu/pxt-tools
+S3BigCar=github:VincentMokHoyu/pxt-S3BigCar
 ```
