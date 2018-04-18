@@ -24,6 +24,7 @@ namespace S3BigCar {
         buf[4] = (4095 >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
+   
     //% blockId="LeftMoveBackward" block="LeftMoveBackward speed %speed"
     //% blockGap=2 weight=1
     export function LeftMoveBackward(speed: number): void {
@@ -35,6 +36,7 @@ namespace S3BigCar {
         buf[4] = (4095 >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
+   
     //% blockId="RightMoveBackward" block="RightMoveBackward speed %speed"
     //% blockGap=2 weight=1
     export function RightMoveBackward(speed: number): void {
@@ -46,5 +48,4 @@ namespace S3BigCar {
         buf[4] = (4095 >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf, false)        
         }
-  
-}
+  }
