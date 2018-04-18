@@ -1,0 +1,5 @@
+{
+    "S3BigCar|block": "工具",
+    "S3BigCar.areaOfRectangle|block": "長方形面積 長 %length|寬 %width",
+    "S3BigCar.ledOfRectangle|block": "LED顯示長方形面積 長 %length|寬 %width"
+}
