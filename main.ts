@@ -17,10 +17,10 @@ namespace tools {
         basic.showNumber(length*width)
     }
     
-     //% blockId="CarMoveForward" block="CarMoveForward %Speed"
+ //% blockId="ledOfRectangle2" block="show area of rectangle length %length|width %width"
     //% blockGap=2 weight=1
-    export function CarMoveForward: void {
-    
+    export function ledOfRectangle(length: number, width:number): void {
+        basic.showNumber(length*width)
     }
   
 }
