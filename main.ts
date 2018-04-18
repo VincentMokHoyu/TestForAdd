@@ -11,15 +11,17 @@ namespace tools {
     /**
     * 計算長方形面積，不回傳，只顯示在LED
     */
-    //% blockId="ledOfRectangle" block="show area of rectangle length %length|width %width"
+    //% blockId="ledOfRectangle" block="showeeee area of rectangle length %length|width %width"
     //% blockGap=2 weight=1
     export function ledOfRectangle(length: number, width:number): void {
         basic.showNumber(length*width)
     }
-    
- //% blockId="ledOfRectangle2" block="show area of rectangle length %length|width %width"
+        /**
+    * 計算長方形面積，不回傳，只顯示在LED
+    */
+    //% blockId="ledOfRectangle2" block="showssss area of rectangle length %length|width %width"
     //% blockGap=2 weight=1
-    export function ledOfRectangle(length: number, width:number): void {
+    export function ledOfRectangle2(length: number, width:number): void {
         basic.showNumber(length*width)
     }
   
