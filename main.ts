@@ -1,12 +1,47 @@
 //% weight=0 color=#3CB371 icon="\uf0ad" block="S3BigCar"
 namespace S3BigCar {
+   let initialized = false
+    function i2cwrite(addr: number, reg: number, value: number) {
+        let buf = pins.createBuffer(2)
+        buf[0] = reg
+        buf[1] = value
+        pins.i2cWriteBuffer(addr, buf)
+    }
+
+     function initPCA9685(): void {
+        i2cwrite(0x41, 0x00, 0x00)
+        setFreq(50);
+        initialized = true
+    }
+
+    function setFreq(freq: number): void {
+        // Constrain the frequency
+        let prescaleval = 25000000;
+        prescaleval /= 4096;
+        prescaleval /= freq;
+        prescaleval -= 1;
+        let prescale = prescaleval; //Math.Floor(prescaleval + 0.5);
+        let oldmode = i2cread(0x41, 0x00);
+        let newmode = (oldmode & 0x7F) | 0x10; // sleep
+        i2cwrite(0x41, 0x00, newmode); // go to sleep
+        i2cwrite(0x41, 0xFE, prescale); // set the prescaler
+        i2cwrite(0x41, 0x00, oldmode);
+        control.waitMicros(5000);
+        i2cwrite(0x41, 0x00, oldmode | 0xa1);
+    }
+
+   
    
     //% blockId="Left_Forward" block="Left_Forward speed %speed"
     //% blockGap=2 weight=1
     export function Left_Forward(speedL: number): void {
-       mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
-    mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
-    
+       
+             if (!initialized) {
+            initPCA9685();
+        }
+
+       
+       
 let buf1 = pins.createBuffer(5);
    buf1[0] = 6 + 4 * 12
     buf1[1] =  0 & 0xff
@@ -30,8 +65,10 @@ buf2[0] = 6 + 4 * 13
     //% blockId="Right_Forward" block="Right_Forward speed %speed"
     //% blockGap=2 weight=1
     export function Right_Forward(speedR: number): void {
-           mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
-    mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
+          if (!initialized) {
+            initPCA9685();
+        }
+
     
        let buf3 = pins.createBuffer(5);
    buf3[0] = 6 + 4 * 14
@@ -61,8 +98,10 @@ buf4[0] = 6 + 4 * 15
     //% blockId="Left_Backward" block="Left_Backward speed %speed"
     //% blockGap=2 weight=1
     export function Left_Backward(speedL: number): void {
-       mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
-    mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
+     if (!initialized) {
+            initPCA9685();
+        }
+
     
 let buf5 = pins.createBuffer(5);
 buf5[0] = 6 + 4 * 12
@@ -92,8 +131,9 @@ buf6[0] = 6 + 4 * 13
     //% blockId="Right_Backward" block="Right_Backward speed %speed"
     //% blockGap=2 weight=1
     export function Right_Backward(speedR: number): void {
-       mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
-    mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
+      if (!initialized) {
+            initPCA9685();
+        }
     
        let buf7 = pins.createBuffer(5);
 buf7[0] = 6 + 4 * 14
