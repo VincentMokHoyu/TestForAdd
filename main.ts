@@ -20,8 +20,8 @@ namespace S3BigCar {
         buf3[0] = 6 + 4 * 15
         buf3[1] = 0 & 0xff
         buf3[2] = (0 >> 8) & 0xff
-        buf3[3] = 4095 & 0xff
-        buf3[4] = (4095 >> 8) & 0xff
+        buf3[3] = speed & 0xff
+        buf3[4] = (speed >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf3, false)
    
     //% blockId="LeftMoveBackward" block="LeftMoveBackward speed %speed"
@@ -31,8 +31,8 @@ namespace S3BigCar {
         buf2[0] = 6 + 4 * 13
         buf2[1] = 0 & 0xff
         buf2[2] = (0 >> 8) & 0xff
-        buf2[3] = 0 & 0xff
-        buf2[4] = (0 >> 8) & 0xff
+        buf2[3] = speed & 0xff
+        buf2[4] = (speed >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf2, false)      
         }
    
@@ -43,8 +43,8 @@ namespace S3BigCar {
         buf4[0] = 6 + 4 * 14
         buf4[1] = 0 & 0xff
         buf4[2] = (0 >> 8) & 0xff
-        buf4[3] = 0 & 0xff
-        buf4[4] = (0 >> 8) & 0xff
+        buf4[3] = speed & 0xff
+        buf4[4] = (speed >> 8) & 0xff
         pins.i2cWriteBuffer(0x41, buf4, false)        
         }
   }
