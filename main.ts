@@ -1,19 +1,19 @@
 //% weight=0 color=#3CB371 icon="\uf0ad" block="S3BigCar"
 namespace S3BigCar {
    
-    //% blockId="LeftMoveForward" block="Left_Forward speed %speed"
+    //% blockId="Left_Forward" block="Left_Forward speed %speed"
     //% blockGap=2 weight=1
-    export function LeftMoveForward(speedL: number): void {
+    export function Left_Forward(speedL: number): void {
        mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
     mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
     
-let buf = pins.createBuffer(5);
-buf[0] = 6 + 4 * 12
-    buf[1] =  0 & 0xff
-    buf[2] =  (0 >> 8) & 0xff
-    buf[3] =  speedL & 0xff
-    buf[4] =  (speedL >> 8) & 0xff
-    pins.i2cWriteBuffer(0x41, buf, false)
+let buf1 = pins.createBuffer(5);
+   buf1[0] = 6 + 4 * 12
+    buf1[1] =  0 & 0xff
+    buf1[2] =  (0 >> 8) & 0xff
+    buf1[3] =  speedL & 0xff
+    buf1[4] =  (speedL >> 8) & 0xff
+    pins.i2cWriteBuffer(0x41, buf1, false)
 let buf2 = pins.createBuffer(5);
 buf2[0] = 6 + 4 * 13
     buf2[1] =  0 & 0xff
@@ -27,14 +27,14 @@ buf2[0] = 6 + 4 * 13
    
    
    
-    //% blockId="RightMoveForward" block="Right_Forward speed %speed"
+    //% blockId="Right_Forward" block="Right_Forward speed %speed"
     //% blockGap=2 weight=1
-    export function RightMoveForward(speedR: number): void {
+    export function Right_Forward(speedR: number): void {
            mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
     mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
     
        let buf3 = pins.createBuffer(5);
-buf3[0] = 6 + 4 * 14
+   buf3[0] = 6 + 4 * 14
     buf3[1] =  0 & 0xff
     buf3[2] =  (0 >> 8) & 0xff
     buf3[3] =  0 & 0xff
@@ -48,8 +48,6 @@ buf4[0] = 6 + 4 * 15
     buf4[4] =  (speedR >> 8) & 0xff
     pins.i2cWriteBuffer(0x41, buf4, false)  
        
-      
-       
 
         }
    
@@ -60,26 +58,26 @@ buf4[0] = 6 + 4 * 15
    
    
    
-    //% blockId="LeftMoveBackward" block="Left_Backward speed %speed"
+    //% blockId="Left_Backward" block="Left_Backward speed %speed"
     //% blockGap=2 weight=1
-    export function LeftMoveBackward(speedL: number): void {
+    export function Left_Backward(speedL: number): void {
        mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
     mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
     
-let buf = pins.createBuffer(5);
-buf[0] = 6 + 4 * 12
-    buf[1] =  0 & 0xff
-    buf[2] =  (0 >> 8) & 0xff
-    buf[3] =  0 & 0xff
-    buf[4] =  (0 >> 8) & 0xff
-    pins.i2cWriteBuffer(0x41, buf, false)
-let buf2 = pins.createBuffer(5);
-buf2[0] = 6 + 4 * 13
-    buf2[1] =  0 & 0xff
-    buf2[2] =  (0 >> 8) & 0xff
-    buf2[3] =  speedL & 0xff
-    buf2[4] =  (speedL >> 8) & 0xff
-    pins.i2cWriteBuffer(0x41, buf2, false)        
+let buf5 = pins.createBuffer(5);
+buf5[0] = 6 + 4 * 12
+    buf5[1] =  0 & 0xff
+    buf5[2] =  (0 >> 8) & 0xff
+    buf5[3] =  0 & 0xff
+    buf5[4] =  (0 >> 8) & 0xff
+    pins.i2cWriteBuffer(0x41, buf5, false)
+let buf6 = pins.createBuffer(5);
+buf6[0] = 6 + 4 * 13
+    buf6[1] =  0 & 0xff
+    buf6[2] =  (0 >> 8) & 0xff
+    buf6[3] =  speedL & 0xff
+    buf6[4] =  (speedL >> 8) & 0xff
+    pins.i2cWriteBuffer(0x41, buf6, false)        
         }
    
    
@@ -91,28 +89,27 @@ buf2[0] = 6 + 4 * 13
    
    
    
-    //% blockId="RightMoveBackward" block="Right_Backward speed %speed"
+    //% blockId="Right_Backward" block="Right_Backward speed %speed"
     //% blockGap=2 weight=1
-    export function RightMoveBackward(speedR: number): void {
+    export function Right_Backward(speedR: number): void {
        mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
     mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Stop)
     
-       let buf3 = pins.createBuffer(5);
-buf3[0] = 6 + 4 * 14
-    buf3[1] =  0 & 0xff
-    buf3[2] =  (0 >> 8) & 0xff
-    buf3[3] =  speedR & 0xff
-    buf3[4] =  (speedR >> 8) & 0xff
-    pins.i2cWriteBuffer(0x41, buf3, false)
-let buf4 = pins.createBuffer(5);
-buf4[0] = 6 + 4 * 15
-    buf4[1] =  0 & 0xff
-    buf4[2] =  (0 >> 8) & 0xff
-    buf4[3] =  0 & 0xff
-    buf4[4] =  (0 >> 8) & 0xff
-    pins.i2cWriteBuffer(0x41, buf4, false)   
-       
-       
+       let buf7 = pins.createBuffer(5);
+buf7[0] = 6 + 4 * 14
+    buf7[1] =  0 & 0xff
+    buf7[2] =  (0 >> 8) & 0xff
+    buf7[3] =  speedR & 0xff
+    buf7[4] =  (speedR >> 8) & 0xff
+    pins.i2cWriteBuffer(0x41, buf7, false)
+let buf8 = pins.createBuffer(5);
+buf8[0] = 6 + 4 * 15
+    buf8[1] =  0 & 0xff
+    buf8[2] =  (0 >> 8) & 0xff
+    buf8[3] =  0 & 0xff
+    buf8[4] =  (0 >> 8) & 0xff
+    pins.i2cWriteBuffer(0x41, buf8, false)   
+              
        
         }
   }
