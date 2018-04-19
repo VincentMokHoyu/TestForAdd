@@ -1,7 +1,7 @@
 //% weight=0 color=#3CB371 icon="\uf0ad" block="S3BigCar"
 namespace S3BigCar {
    
-    //% blockId="LeftMoveForward" block="LeftMoveForward speed %speed"
+    //% blockId="LeftMoveForward" block="Left_Forward speed %speed"
     //% blockGap=2 weight=1
     export function LeftMoveForward(speedL: number): void {
        mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
@@ -27,7 +27,7 @@ buf2[0] = 6 + 4 * 13
    
    
    
-    //% blockId="RightMoveForward" block="RightMoveForward speed %speed"
+    //% blockId="RightMoveForward" block="Right_Forward speed %speed"
     //% blockGap=2 weight=1
     export function RightMoveForward(speedR: number): void {
            mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
@@ -60,7 +60,7 @@ buf4[0] = 6 + 4 * 15
    
    
    
-    //% blockId="LeftMoveBackward" block="LeftMoveBackward speed %speed"
+    //% blockId="LeftMoveBackward" block="Left_Backward speed %speed"
     //% blockGap=2 weight=1
     export function LeftMoveBackward(speedL: number): void {
        mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
@@ -91,7 +91,7 @@ buf2[0] = 6 + 4 * 13
    
    
    
-    //% blockId="RightMoveBackward" block="RightMoveBackward speed %speed"
+    //% blockId="RightMoveBackward" block="Right_Backward speed %speed"
     //% blockGap=2 weight=1
     export function RightMoveBackward(speedR: number): void {
        mbit_小车类.CarCtrl(mbit_小车类.CarState.Car_Run)
