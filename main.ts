@@ -1,4 +1,4 @@
-//% weight=0 color=#3CB371 icon="\uf0ad" block="S3BigCar"
+//% weight=0 color=#3CB371 icon="\uf36e" block="S3BigCar"
 namespace S3BigCar {
    
     //% blockId="LeftMoveForward" block="LeftMoveForward speed %speed"
@@ -14,7 +14,7 @@ namespace S3BigCar {
         }
     
     //% blockId="RightMoveForward" block="RightMoveForward speed %speed"
-    //% blockGap=2 weight=1
+    //% blockGap=2 weight=2
     export function RightoveForward(speed: number): void {
         let buf3 = pins.createBuffer(5);
         buf3[0] = 6 + 4 * 15
@@ -25,7 +25,7 @@ namespace S3BigCar {
         pins.i2cWriteBuffer(0x41, buf3, false)
    
     //% blockId="LeftMoveBackward" block="LeftMoveBackward speed %speed"
-    //% blockGap=2 weight=1
+    //% blockGap=2 weight=3
     export function LeftMoveBackward(speed: number): void {
         let buf2 = pins.createBuffer(5);
         buf2[0] = 6 + 4 * 13
@@ -37,7 +37,7 @@ namespace S3BigCar {
         }
    
     //% blockId="RightMoveBackward" block="RightMoveBackward speed %speed"
-    //% blockGap=2 weight=1
+    //% blockGap=2 weight=4
     export function RightMoveBackward(speed: number): void {
         let buf4 = pins.createBuffer(5);
         buf4[0] = 6 + 4 * 14
